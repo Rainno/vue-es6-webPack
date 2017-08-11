@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/manage_system.css">
+    <title>manage system</title>
+</head>
+<body>
+<div id="project">
+    <div class="tools">
+        <div class="addMsg-btn" @click="addMsg()">添加信息</div>
+        <ul class="choose-btn" @click="isShowChoose=true">请选择排列顺序
+            <div v-show="isShowChoose">
+                <li class="choose-li" v-for="(option,index) in options" @click="choose(option)">{{option.text}}</li>
+            </div>
+        </ul>
+        <div class="search"><!--搜索：-->
+            <input type="text" id="keyword" v-model="searchInfo"  @keyup="keyUp_search()">
+            <div class="search-btn" @click="search()">搜索</div>
+        </div>
+        <div class="search-box" v-show="isShowSearchBox">
+            <ul v-for="item in detailData">
+                <li @click="selectItem(item)">{{item.task_title}}:{{item.create_time}}，{{item.sender}}，{{item.executor}}</li>
+            </ul>
+        </div>
+    </div>
+    <table class="taskList" cellspacing="0">
+        <caption>任务详细列表</caption>
+        <thead>
+            <tr class="task">
+                <td>任务标题</td>
+                <td>创建时间</td>
+                <td>发送者</td>
+                <td>执行人</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(item,index) in detail " :style="{backgroundColor:index==curIndex?'rgba(255, 64, 128, 0.1)':'rgba(3,169,244,0.1)'}">
+                <td :class="{title:isTitle}">{{item.task_title}}</td>
+                <td :class="{time:isTime}">{{item.create_time}}</td>
+                <td :class="{sender:isSender}">{{item.sender}}</td>
+                <td :class="{executor:isExecutor}">{{item.executor}}</td>
+                <td v-for="operation in item.operations">
+                    <span @click="edit(item)">{{operation.edit}}</span>
+                    <span @click="check(item)">{{operation.check}}</span>
+                    <span @click="del(item)">{{operation.delete}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+   <!-- 查看/编辑信息 -->
+    <div class="checkMsg" v-show="checkFlag">
+        <!--查看-->
+        <div class="msg" v-show="checkInfo">
+            <div class="insert" v-for="(msg,index) in curMsg">
+                <div class="look">
+                    任务标题：<div>{{msg.task_title}}</div>
+                    创建时间：<div>{{msg.create_time}}</div>
+                    发送者：<div>{{msg.sender}}</div>
+                    执行人：<div >{{msg.executor}}</div>
+                </div>
+            </div>
+            <div class="btn_choose">
+                <div class="modifyMsg" @click="change()">修改信息</div>
+                <div class="close" @click="checkFlag=false">关闭</div>
+            </div>
+        </div>
+        <!--编辑-->
+        <div class="editMsg" v-show="editInfo">
+            <div class="insert" v-for="(msg,index) in curMsg">
+                <div class="mend">
+                    任务标题：<input type="text" v-model="msg.task_title">
+                    创建时间：<input type="text" v-model="msg.create_time">
+                    发送者：<input type="text" v-model="msg.sender">
+                    执行人：<input type="text" v-model="msg.executor">
+                </div>
+            </div>
+            <div class="btn_choose">
+                <div class="modifyMsg" @click="editConfirm()">确认修改</div>
+                <div class="close" @click="editCancel()">取消修改</div>
+            </div>
+        </div>
+        <!--添加信息-->
+        <div class="addMsg" v-show="addFlag">
+            <div class="insert">
+                <div class="mend">
+                    任务标题：<input type="text" v-model="detailItem.task_title">
+                    创建时间：<input type="text" v-model="detailItem.create_time">
+                    发送者：<input type="text" v-model="detailItem.sender">
+                    执行人：<input type="text" v-model="detailItem.executor">
+                </div>
+            </div>
+            <div class="btn_choose">
+                <div class="modifyMsg" @click="addConfirm()">确认添加</div>
+                <div class="close" @click="addCancel()">取消添加</div>
+            </div>
+        </div>
+    </div>
+    <!--删除框-->
+    <div class="alert" v-show="deleteFlag">
+        <div class="del">
+            <div class="msg">是否删除该条消息？</div>
+            <div class="btn_choose">
+                <div class="confirm" @click="confirm()">确认</div>
+                <div class="cancel" @click="deleteFlag=false">取消</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mention" v-show="mentionFlag">
+        <div class="tip">
+            <div class="msg">请正确填写，不为空！</div>
+            <div class="btn_choose">
+                <div class="confirm" @click="mentionConfirm()">确认</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/vue.min.js"></script>
+<script src="./js/manage_system.js"></script>
+</body>
+</html>

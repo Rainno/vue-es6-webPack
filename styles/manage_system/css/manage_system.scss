@@ -1,0 +1,202 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.tools{
+  width: 1000px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 100px;
+ padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .addMsg-btn,.choose-btn,.search{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: mediumvioletred;
+    margin: 0 10px;
+    cursor: pointer;
+    color: white;
+  }
+  .choose-btn{
+    width: 150px;
+    font-size: 12px;
+    list-style: none;
+    .choose-li{
+     background-color: rgba(199,21,133,122);
+    }
+  }
+
+  .search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 250px;
+
+    #keyword{
+      width: 150px;
+      height: 25px;
+      outline: none;
+      margin-top: 8px;
+    }
+    .search-btn{
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      margin: 5px 10px;
+      border: 1px solid white;
+    }
+  }
+  .search-box{
+    width: 300px;
+    height: 95px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 400px;
+    top: 50px;
+    ul li{
+      list-style: none;
+      background-color: gainsboro;
+      text-indent: 5px;
+      cursor:pointer;
+    }
+  }
+}
+.rowStyle{
+  background: yellow;
+}
+.taskList{
+  width: 1000px;
+  height: 100%;
+  border: 1px solid black;
+  margin: auto;
+  .title,.time,.sender,.executor{
+    color: red;
+  }
+  caption{
+    background: #01aafa;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+  }
+
+  td{
+    border: 1px solid gainsboro;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+  }
+  .task{
+    font-size: 18px;
+  }
+  span{
+    cursor: pointer
+  }
+
+}
+
+.alert,.mention{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  .del,.tip{
+    width: 500px;
+    height: 300px;
+    background: white;
+    margin: auto;
+    margin-top: 200px;
+    .msg{
+      width: 100%;
+      height: 180px;
+      line-height: 180px;
+      text-align: center;
+      font-size: 22px;
+    }
+    .btn_choose{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      box-sizing: border-box;
+      color: white;
+      font-size: 16px;
+      .confirm{
+        width: 80px;
+        height: 20px;
+        background-color: red;
+        text-align: center;
+        padding: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .cancel{
+        width: 80px;
+        height: 20px;
+        background-color: blue;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+
+.checkMsg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  .msg,.editMsg, .addMsg{
+    width: 600px;
+    height: 400px;
+    background: white;
+    padding: 100px 200px;
+    margin: auto;
+    margin-top: 50px;
+    .insert{
+      width: 600px;
+      height: 300px;
+      margin: auto;
+      div,input{
+        width: 200px;
+        height: 40px;
+      }
+    }
+  }
+  .btn_choose{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+    color: white;
+    font-size: 16px;
+    .modifyMsg{
+      width: 80px;
+      height: 20px;
+      background-color: red;
+      text-align: center;
+      padding: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .close{
+      width: 80px;
+      height: 20px;
+      background-color: blue;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+
+}

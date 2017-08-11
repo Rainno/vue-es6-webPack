@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.tools {
+  width: 1000px;
+  height: 50px;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .tools .addMsg-btn, .tools .choose-btn, .tools .search {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: mediumvioletred;
+    margin: 0 10px;
+    cursor: pointer;
+    color: white; }
+  .tools .choose-btn {
+    width: 150px;
+    font-size: 12px;
+    list-style: none; }
+    .tools .choose-btn .choose-li {
+      background-color: mediumvioletred; }
+  .tools .search {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 250px; }
+    .tools .search #keyword {
+      width: 150px;
+      height: 25px;
+      outline: none;
+      margin-top: 8px; }
+    .tools .search .search-btn {
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      margin: 5px 10px;
+      border: 1px solid white; }
+  .tools .search-box {
+    width: 300px;
+    height: 95px;
+    padding: 5px 10px;
+    position: absolute;
+    right: 400px;
+    top: 50px; }
+    .tools .search-box ul li {
+      list-style: none;
+      background-color: gainsboro;
+      text-indent: 5px;
+      cursor: pointer; }
+
+.rowStyle {
+  background: yellow; }
+
+.taskList {
+  width: 1000px;
+  height: 100%;
+  border: 1px solid black;
+  margin: auto; }
+  .taskList .title, .taskList .time, .taskList .sender, .taskList .executor {
+    color: red; }
+  .taskList caption {
+    background: #01aafa;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px; }
+  .taskList td {
+    border: 1px solid gainsboro;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px; }
+  .taskList .task {
+    font-size: 18px; }
+  .taskList span {
+    cursor: pointer; }
+
+.alert, .mention {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10; }
+  .alert .del, .alert .tip, .mention .del, .mention .tip {
+    width: 500px;
+    height: 300px;
+    background: white;
+    margin: auto;
+    margin-top: 200px; }
+    .alert .del .msg, .alert .tip .msg, .mention .del .msg, .mention .tip .msg {
+      width: 100%;
+      height: 180px;
+      line-height: 180px;
+      text-align: center;
+      font-size: 22px; }
+    .alert .del .btn_choose, .alert .tip .btn_choose, .mention .del .btn_choose, .mention .tip .btn_choose {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+         -moz-box-orient: horizontal;
+         -moz-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+         -moz-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      color: white;
+      font-size: 16px; }
+      .alert .del .btn_choose .confirm, .alert .tip .btn_choose .confirm, .mention .del .btn_choose .confirm, .mention .tip .btn_choose .confirm {
+        width: 80px;
+        height: 20px;
+        background-color: red;
+        text-align: center;
+        padding: 10px;
+        margin-right: 10px;
+        cursor: pointer; }
+      .alert .del .btn_choose .cancel, .alert .tip .btn_choose .cancel, .mention .del .btn_choose .cancel, .mention .tip .btn_choose .cancel {
+        width: 80px;
+        height: 20px;
+        background-color: blue;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer; }
+
+.checkMsg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10; }
+  .checkMsg .msg, .checkMsg .editMsg, .checkMsg .addMsg {
+    width: 600px;
+    height: 400px;
+    background: white;
+    padding: 100px 200px;
+    margin: auto;
+    margin-top: 50px; }
+    .checkMsg .msg .insert, .checkMsg .editMsg .insert, .checkMsg .addMsg .insert {
+      width: 600px;
+      height: 300px;
+      margin: auto; }
+      .checkMsg .msg .insert div, .checkMsg .msg .insert input, .checkMsg .editMsg .insert div, .checkMsg .editMsg .insert input, .checkMsg .addMsg .insert div, .checkMsg .addMsg .insert input {
+        width: 200px;
+        height: 40px; }
+  .checkMsg .btn_choose {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    color: white;
+    font-size: 16px; }
+    .checkMsg .btn_choose .modifyMsg {
+      width: 80px;
+      height: 20px;
+      background-color: red;
+      text-align: center;
+      padding: 10px;
+      margin-right: 10px;
+      cursor: pointer; }
+    .checkMsg .btn_choose .close {
+      width: 80px;
+      height: 20px;
+      background-color: blue;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer; }
